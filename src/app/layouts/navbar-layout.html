@@ -1,0 +1,22 @@
+<nav class="fixed top-0 left-0 right-0 bg-gray-900 shadow-lg  m-auto z-1">
+  <div class="flex justify-around p-4 h-15">
+    <img class="w-13 h-13 -mt-3 ml-150" src="mike_movie.png">
+      <h1 class="mr-175 text-yellow-500 text-2xl"> MIKE Movie</h1>
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<nav class="fixed bottom-0 left-0 right-0 bg-gray-900 shadow-xl  m-auto">
+  <div class="flex justify-around p-4 h-15  ">
+    <button  pButton icon="pi pi-home" size="large" [rounded]="true" [text]="true" (click)="onclickHome()" ></button>
+    <button pButton icon="pi pi-list"size="large" [rounded]="true" [text]="true" (click)="onClickList()" ></button>
+    <button pButton icon="pi pi-sign-in"size="large" [rounded]="true" [text]="true" (click)="onClickLogin()"  ></button>
+    <button pButton icon="pi pi-envelope"size="large" [rounded]="true" [text]="true" (click)="onClickTodo()" ></button>
+  </div>
+</nav>
+
+
+
+

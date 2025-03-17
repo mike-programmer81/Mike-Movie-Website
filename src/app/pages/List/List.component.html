@@ -1,0 +1,77 @@
+
+
+<p-table [value]="colectionComponent" [tableStyle]="{ 'min-width': '60rem','min-height': '55rem' }">
+    
+       
+   
+    <ng-template #header>
+          
+    <div class="mt-18 mb-5 ml-13 cursor-pointer">
+        <i  class="fa fa-list-ul absolute -ml-6 mt-3 text-yellow-500" aria-hidden="true"></i>
+            <div class="text-2xl font-bold text-yellow-500">List</div>
+       
+    </div>
+    
+        <tr >
+            <th >Num</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>boxOffice</th>
+            <th>Category</th>
+            <th>Reviews</th>
+            <th>Status</th>
+        </tr>
+    
+        <ng-container>
+        
+            @for (item of colectionComponent;let i = $index; track $index) {
+                
+                <tr class="cursor-pointer" >
+                    <td  class="text-yellow-500 absolute ml-8 mt-7 " >{{item.id}}</td>
+                    <td  class="text-yellow-500" >{{ item.title }}</td>
+                    <td >
+                        <img  [src]="item.poster" class="w-24 rounded m-3" />
+                    </td>
+                    <td class="text-white" >{{ item.boxOffice}}</td>
+                    <td class="text-white">{{ item.Genre }}</td>
+                    <td ><p-rating  [(ngModel)]="item.rating" [readonly]="true"  /></td>
+                    
+                    <td>
+                        
+                        <p-button  (click)="showDialog(i)" label="Edit" icon="pi pi-pen-to-square"  [style]="{ 'background-color': 'black', 'color':'white','margin-right':'7px' }" />
+                        <p-button  (click)="handleDelete(item.id)" icon="pi pi-times" severity="danger" />
+
+                    </td>
+                </tr>
+
+
+                @if (openDialogIndex === i) {
+               
+                <p-dialog  header="Edit information" [modal]="true" [(visible)]="dialogVisible" [style]="{ 'background': 'linear-gradient(to bottom, #000000, #201b4f, #15152c)','color':'white', 'width': '28rem', }">
+                    <i class="pi pi-video text-yellow-500" style="font-size: 1rem">   <label class=" text-xl text-yellow-500 font-bold ml-2" for="username">{{ item.title }}</label></i> 
+                    <span class="p-text-secondary block mb-8"></span>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-center text-xl text-white font-bold" for="username">Edit box Office</label>
+                        <input class="bg-black p-3 text-white rounded-lg" pInputText id="username" aria-describedby="username-help" [(ngModel)]="item.boxOffice" />
+                        <br>
+                        <label class="text-center text-xl text-white font-bold" for="username">Edit Genre</label>
+                        <input class="bg-black p-3 text-white rounded-lg" pInputText id="username" aria-describedby="username-help" [(ngModel)]="item.Genre" />
+                        <br>
+                    </div>
+                    <div class="flex justify-end gap-2">
+                        <!-- <p-button label="Cancel" severity="secondary" (click)="dialogVisible = false" [style]="{ 'background-color':'#960000','color':'white'}" /> -->
+                        <p-button   label="Save" (click)="dialogVisible = false" [style]="{ 'background': 'linear-gradient(to bottom, #3333f7, #201b4f, #3333f7)','color':'white','width':'23rem','margin-right':'20px'}" />
+                    </div>
+                </p-dialog>
+            }
+
+            
+            }
+        
+        </ng-container>
+    
+    </ng-template>
+
+    <!-- استفاده از @for در یک ng-container -->
+    
+</p-table>
