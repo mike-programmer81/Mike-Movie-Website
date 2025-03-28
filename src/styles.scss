@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
 @use "primeicons/primeicons.css";
-*body{
+body{
     background: linear-gradient(to bottom, #000000, #201b4f, #15152c);
+    background-repeat: no-repeat;
 }

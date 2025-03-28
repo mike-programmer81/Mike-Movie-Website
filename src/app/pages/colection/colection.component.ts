@@ -4,32 +4,32 @@ import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'colectionComponent',
-    templateUrl: 'colection.component.html',
-     imports:[ButtonModule,CardModule, CommonModule]
+  selector: 'colectionComponent',
+  templateUrl: 'colection.component.html',
+  imports: [ButtonModule, CardModule, CommonModule]
 })
 
 export class colectionComponent implements OnInit {
-    
-      
-    @Input() poster!:string
-    @Input() runtime!:string
-    @Input() title:string | undefined 
-    @Input() image!:string
-    @Input() country!:string
-    
-
-    constructor() { }
-
-    ngOnInit():void {}
 
 
+  @Input() poster!: string
+  @Input() runtime!: string
+  @Input() title: string | undefined
+  @Input() image!: string
+  @Input() country!: string
 
 
-    isvisible:boolean=false;
-    buttonvisible:boolean=true;
-  showInformation(){
-      this.isvisible= !this.isvisible
-      this.buttonvisible= !this.buttonvisible
+  constructor() { }
+
+  ngOnInit(): void { }
+
+
+
+
+  isvisible: boolean = false;
+  buttonvisible: boolean = true;
+  showInformation() {
+    this.isvisible = !this.isvisible
+    this.buttonvisible = !this.buttonvisible
   }
 }
