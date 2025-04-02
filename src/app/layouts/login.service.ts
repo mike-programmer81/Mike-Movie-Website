@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { LoginModel } from './login.model';
+import { LoginModel } from './login-model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})

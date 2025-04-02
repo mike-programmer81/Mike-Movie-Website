@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'selector-name',
     templateUrl: 'Login.component.html',
+    styleUrl : './login.component.css',
     imports: [ButtonModule, FormsModule],
     providers: [LoginService]
 
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     handleLogin() {
         this.loginservice.login({
             password: this.loginmodel.password,
-            username: this.loginmodel.password,
+            username: this.loginmodel.username,
             expiresInMins: 30
         }).subscribe({
             next: ((response) => {

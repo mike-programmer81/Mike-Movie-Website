@@ -1,7 +1,28 @@
-<nav class="fixed top-0 left-0 right-0 bg-gray-900 shadow-lg  m-auto z-1">
-  <div class="flex justify-around p-4 h-15">
-    <img class="w-13 h-13 -mt-3 ml-150" src="mike_movie.png">
-      <h1 class="mr-175 text-yellow-500 text-2xl"> MIKE Movie</h1>
+<nav class="fixed top-0 left-0 right-0 bg-gray-900 shadow-lg  m-auto z-1" >
+
+  
+  <div class="flex justify-around p-4 h-18" >
+    <p-button class="!bg-red cursor-pointer" label="Login" icon=" pi pi-sign-in" [style]="{ 'background-color':' darkgoldenrod','color':'black','border-color': 'darkgoldenrod'   }" (click)="onclickloginNew()" />
+    <p-dialog class="!text-green-500" header="Welcom to MIKE movie" [modal]="true" [(visible)]="dialogVisible" [style]="{ width: '25rem'}">
+      <span class="p-text-secondary block mb-8">Login to WebSite</span>
+      <div class="flex items-center gap-4 mb-4" >
+          
+          <input pInputText id="username" class="flex-auto ml-2" placeholder="username" autocomplete="off" [(ngModel)]="loginmodel.username" [style]="{ 'background-color': '#c6c4c4', 'border-radius': '7px','padding':'5px'  }"  />
+          
+
+      </div>
+      <div class="flex items-center gap-4 mb-8">
+          
+          <input pInputText id="email" class="flex-auto ml-2" placeholder="password" autocomplete="off" [(ngModel)]="loginmodel.password" [style]="{ 'background-color': '#c6c4c4', 'border-radius': '7px','padding':'5px'  }"  />
+      </div>
+      <div class="flex justify-end gap-2">
+         
+          <p-button label="Save" (click)="dialogVisible = false" (click)="handleLogin()" [style]="{ 'background-color':' purple','color':'white','width': '23rem'   }" />
+      </div>
+  </p-dialog>
+  
+    <img class="w-13 h-13 -mt-3 ml-120" src="mike_movie.png">
+      <h1 class="mr-170 text-yellow-500 text-2xl"> MIKE Movie</h1>
 
   </div>
 </nav>
@@ -16,6 +37,13 @@
     <p-button  icon="pi pi-envelope" [rounded]="true" [text]="true" (click)="onClickTodo()" ></p-button>
   </div>
 </nav>
+
+
+
+
+
+
+
 
 
 

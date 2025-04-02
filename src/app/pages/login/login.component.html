@@ -1,8 +1,52 @@
-<div class="m-50">
-	<input class="bg-white" type="text" pInputText [(ngModel)]="loginmodel.username" />
-	<input class="bg-gray-600 ml-5" type="text" pInputText [(ngModel)]="loginmodel.password" />
-<p-button (click)="handleLogin()" class="m-50"  label="Success" severity="success" />
 
 
-</div>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link type="text/css" href=" Login.component.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" >
+</head>
+<body>
+	<div class="main ">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="username" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+                    
+          <input type="number" name="broj" placeholder="999-99-9" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Sign up</button>
+                    
+                    
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="username" name="email" placeholder="username" required="" [(ngModel)]="loginmodel.username">
+					<input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="loginmodel.password">
+					<button (click)="handleLogin()">Login</button>
+					<p class="text-center cursor-pointer text-black hover:text-red-800">Forgot your password?</p>
+                    <div class="cursor-pointer grid grid-cols-3 ml-23 mt-10 ">
+						<div class="text-black-500 hover:text-sky-700" >
+							<a><i class="pi pi-facebook" style="font-size: 2rem"></i></a>
+						</div>
+						<div class="text-black-500 hover:text-blue-700">
+							<a><i class="pi pi-telegram" style="font-size: 2rem"></i></a>
+						</div>
+						<div class="text-black-500 hover:text-red-500">
+							<a><i class="pi pi-instagram" style="font-size: 2rem"></i></a>
+						</div>
+					</div>
+                    
+				</form>
+			</div>
+	</div>
+</body>
+
+</html>
 
